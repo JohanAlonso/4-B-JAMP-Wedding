@@ -1,16 +1,10 @@
 <?php
-class ControladorPlantilla{
-    /**
-     * llamada a la plantilla
-     */
+    Class ControladorPlantilla{
+        #Llamada la plantilla 
+        #
+        public function ctrTraerPlantilla(){
+            include "vistas/plantilla.php";
+        }
 
-     public function ctrTraerPlantilla(){
-        #include() se utiliza para invocar el archivo que contine codigo html
-        #o php
-
-        include "vistas/plantilla.php";
-     }
-}
-
-
+    }
 ?>
