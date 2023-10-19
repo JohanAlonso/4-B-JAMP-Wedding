@@ -92,7 +92,7 @@
                      The wedding day of
                   </h3>
                   <h2 class="celebrate__tittle">
-                     Shakira & Deniel
+                     Jeimi & Johan
                   </h2>
                   <h3 class="sub__tittle">
                      Which is celebration on

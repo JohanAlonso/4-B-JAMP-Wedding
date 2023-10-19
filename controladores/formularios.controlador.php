@@ -1,44 +1,81 @@
 <?php
 class ControladorFormularios
 {
+
+
+
+
+
+
     /*
     REGISTRO
     */
     static public function crtRegistro()
     {
+        // Comprueba si se ha enviado el formulario de registro
         if (isset($_POST["registerName"])) {
-            /*return $_POST["registerName"] . "<br>" . $_POST["registerEmail"] . "<br>" .$_POST["registerPassword"] . "<br>";*/
-            $tabla = "registros";
+        // Comenta el contenido de depuración
+        /*return $_POST["registerName"] . "<br>" . $_POST["registerEmail"] . "<br>" .$_POST["registerPassword"] . "<br>";*/
+        
+        // Nombre de la tabla en la base de datos
+        $tabla = "registros";
 
-            $datos = array(
-                "nombre" => $_POST["registerName"],
-                "email" => $_POST["registerEmail"],
-                "password" => $_POST["registerPassword"]
-            );
-            $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
-            return $respuesta;
-        }
+        // Arreglo con los datos del registro
+        $datos = array(
+            "nombre" => $_POST["registerName"],
+            "email" => $_POST["registerEmail"],
+            "password" => $_POST["registerPassword"]
+        );
+
+        // Llama al método "mdlRegistro" del modelo para insertar los datos en la base de datos
+        $respuesta = ModeloFormularios::mdlRegistro($tabla, $datos);
+
+        // Retorna la respuesta del modelo (puede ser "ok" u otro mensaje)
+        return $respuesta;
     }
+}
+
+
+
+
+
+
     /**
-     * Selecion de registros de la tabla
-     */
-    static public function ctrSeleccionarRegistros($item, $valor)
-    {
-        if ($item == null && $valor == null) {
-            $tabla = "registros";
+ * Selección de registros de la tabla
+ */
+static public function ctrSeleccionarRegistros($item, $valor)
+{
+    // Verificar si no se proporciona un criterio y un valor de búsqueda
+    if ($item == null && $valor == null) {
+        // Nombre de la tabla en la base de datos
+        $tabla = "registros";
 
-            $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, null, null);
+        // Llama al método "mdlSeleccionarRegistros" del modelo para obtener todos los registros
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, null, null);
 
-            return $respuesta;
-        } else {
-            $tabla = "registros";
+        // Retorna la respuesta del modelo (puede ser un arreglo de registros)
+        return $respuesta;
+    } else {
+        // Si se proporciona un criterio y un valor de búsqueda
 
-            $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
+        // Nombre de la tabla en la base de datos
+        $tabla = "registros";
 
-            return $respuesta;
-        }
+        // Llama al método "mdlSeleccionarRegistros" del modelo con el criterio y el valor proporcionados
+        $respuesta = ModeloFormularios::mdlSeleccionarRegistros($tabla, $item, $valor);
 
+        // Retorna la respuesta del modelo (puede ser un registro específico)
+        return $respuesta;
     }
+}
+
+
+
+
+
+
+
+
     /**
      * Ingreso
      */
