@@ -4,7 +4,9 @@ class ControladorFormularios
 
 
 
-
+/**
+ * 
+ */
 
 
     /*
@@ -33,6 +35,7 @@ class ControladorFormularios
         // Retorna la respuesta del modelo (puede ser "ok" u otro mensaje)
         return $respuesta;
     }
+    
 }
 
 
