@@ -154,11 +154,17 @@ static public function ctrSeleccionarRegistros($item, $valor)
     {
         if (isset($_POST["deleteRegistro"])) {
 
-            $tabla = "registros_mac_wedding";
+            $tabla = "registros";
             $valor = $_POST["deleteRegistro"];
 
 
             $respuesta = ModeloFormularios::mdlEliminarRegistro($tabla, $valor);
+////
+//////
+////////////////////////////////escrip malo///////////////////////
+/////
+////
+////
 
             if ($respuesta == "ok") {
                 echo '<script>
