@@ -5,6 +5,8 @@
     email
     message
     */
+    
+    
     // Only process POST reqeusts.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
@@ -38,7 +40,6 @@
             http_response_code(500);
             echo "Oops! Something went wrong ande we couldn't send your message.";
         }
-
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
